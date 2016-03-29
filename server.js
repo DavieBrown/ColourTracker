@@ -16,8 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 // These are the pin numbers which shoukd be configured for the rgb
 var red = 18;
 var green = 23;
-var blue = 24;s
-
+var blue = 24;
 
 var buzzer = 22;
 // The delay between buzzer 'beeps' - ms
@@ -66,8 +65,8 @@ app.post('/api/colours', function(req, res) {
       blue: req.body.blue
     };
 
-    //setUpPins(chooseWhichToLight, newColour);
-    setUpPinsDisco(flashLights);
+    setUpPins(chooseWhichToLight, newColour);
+
     colours.push(newColour);
 
     // TODO: This isn't safe to read and write to this file. Change to use db.
